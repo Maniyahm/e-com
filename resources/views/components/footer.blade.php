@@ -131,7 +131,7 @@
     <!-- Copyright Section with lighter background -->
     <div class="bg-gray-50 py-4">
       <div class="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-500 text-xs mb-4 md:mb-0">Copyright 2025 © Ninico. All rights reserved. Powered by Bolble.</p>
+        <p class="text-gray-500 text-xs mb-4 md:mb-0">Copyright 2025 © Hm. All rights reserved. Powered by hm.</p>
         
         <div class="flex items-center space-x-6">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png" alt="Amazon" class="h-5 opacity-50">

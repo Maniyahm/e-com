@@ -7,11 +7,11 @@ use App\Http\Controllers\ProfileController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('dashboard');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('dashboard');
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -26,6 +26,8 @@ Route::Post('/store',[ProductController::class,'store'])->name('products.store')
 Route::get('/edit/{product}',[ProductController::class,'edit'])->name('products.edit');
 Route::put('/update/{product}',[ProductController::class,'update'])->name('products.update');
 Route::delete('/delete/{product}',[ProductController::class,'destroy'])->name('products.destroy');
+Route::get('/Product',[ProductController::class,'list'])->name('products.list');
+
 
 Route::get('/category',[CategoryController::class,'index'])->name('category.home');
 Route::get('category/create',[CategoryController::class,'create'])->name('category.index');
@@ -40,7 +42,6 @@ Route::get('category/{slug}',[CategoryController::class,'show'])->name('category
 Route::get('/about',[PageController::class,'about'])->name('about');
 Route::get('/services',[PageController::class,'services'])->name('services');
 Route::get('/contact',[PageController::class,'contact'])->name('contact');
-
 
 
 

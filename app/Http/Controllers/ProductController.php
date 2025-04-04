@@ -109,4 +109,11 @@ class ProductController extends Controller
         
         return redirect()->route('home')->with('success', 'Product deleted successfully');
     }
+    public function list()
+    {
+        $categories = Category::all();
+        $product = Product::all();
+        $tag = Product::all();
+        return view ('product.list',compact('product','categories','tag'));
+    }
 }

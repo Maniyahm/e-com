@@ -13,8 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('category.index',compact('categories'));
-
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -42,9 +41,15 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($slug)
     {
-        
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $categories = Category::all(); // For sidebar
+    
+        return view('category.show', [
+            'category' => $category,
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -79,5 +84,15 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->delete();
         return redirect()->route('category.home')->with('success', 'Category deleted successfully');   
+    }
+    
+    /**
+     * Display a frontend page with all categories.
+     * (Add this new method to your controller)
+     */
+    public function home()
+    {
+        $categories = Category::all();
+        return view('category.home', compact('categories'));
     }
 }
